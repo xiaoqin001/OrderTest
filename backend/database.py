@@ -51,3 +51,5 @@ with app.app_context():
     db.session.add(table_10)
 
     db.session.commit()
+
+    print(table_1.orders)

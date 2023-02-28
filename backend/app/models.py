@@ -78,7 +78,7 @@ class Order(db.Model):
 
     employee = db.relationship("Employee", back_populates="orders")
     table = db.relationship("Table", back_populates="orders")
-    details = db.relationship("OrderDetail", back_populates="back_populates")
+    details = db.relationship("OrderDetail", back_populates="order", cascade="all, delete-orphan")
 
 class OrderDetail(db.Model):
     __tablename__ = "order_details"
